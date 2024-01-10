@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CashierApp.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,5 +23,12 @@ public class Item
     public override string ToString()
     {
         return $"{Id} {Name} {Price}";
+    }
+
+    public static explicit operator Item(ItemsResult itemControllerDto)
+    {
+        return new Item(itemControllerDto.Id,
+                itemControllerDto.Name,
+                itemControllerDto.Price);
     }
 }

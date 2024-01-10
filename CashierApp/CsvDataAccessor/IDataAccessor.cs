@@ -1,4 +1,4 @@
-﻿namespace CashierApp.Data;
+﻿namespace CashierApp.CsvDataAccessor;
 
 public interface IDataAccessor
 {

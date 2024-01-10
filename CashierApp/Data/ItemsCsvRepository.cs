@@ -1,16 +1,12 @@
-﻿using CashierApp.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CashierApp.CsvDataAccessor;
+using CashierApp.Model;
 
 namespace CashierApp.Data;
 
-internal class ItemsRepository : IRepository
+internal class ItemsCsvRepository : IRepository
 {
     private IDataAccessor _accessor;
-    public ItemsRepository(IDataAccessor accessor)
+    public ItemsCsvRepository(IDataAccessor accessor)
     {
         _accessor = accessor;
     }

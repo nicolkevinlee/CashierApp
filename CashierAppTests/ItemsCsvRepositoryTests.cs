@@ -1,4 +1,5 @@
-﻿using CashierApp.Data;
+﻿using CashierApp.CsvDataAccessor;
+using CashierApp.Data;
 using CashierApp.Model;
 using Moq;
 using NUnit.Framework;
@@ -7,17 +8,17 @@ using NUnit.Framework.Legacy;
 namespace CashierAppTests;
 
 [TestFixture]
-internal class ItemsRepositoryTests
+internal class ItemsCsvRepositoryTests
 {
 
     private Mock<IDataAccessor> _accessorMock;
-    private ItemsRepository _cut;
+    private ItemsCsvRepository _cut;
 
     [SetUp]
     public void SetUp()
     {
         _accessorMock = new Mock<IDataAccessor>();
-        _cut = new ItemsRepository(_accessorMock.Object);
+        _cut = new ItemsCsvRepository(_accessorMock.Object);
     }
 
     [Test]

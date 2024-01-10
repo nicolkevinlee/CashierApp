@@ -6,20 +6,19 @@ namespace CashierApp.Forms;
 
 public partial class MainForm : Form
 {
-    private IRepository _itemsRepository;
+    private IApiRepository _itemsRepository;
     private List<Item> _items;
 
-    public MainForm(IRepository itemsRepository)
+    public MainForm(IApiRepository itemsRepository)
     {
         InitializeComponent();
         _itemsRepository = itemsRepository;
-
-        _items = _itemsRepository.GetItemList();
-
     }
 
-    private void MainForm_Load(object sender, EventArgs e)
+    private async void MainForm_Load(object sender, EventArgs e)
     {
+        _items = await _itemsRepository.GetItemList();
+
         foreach (var item in _items)
         {
             ItemsLayoutPanel.Controls.Add(new ItemPanel(item, OnOrderSelect));

@@ -2,6 +2,7 @@ using CashierApp.Data;
 using CashierApp.Model;
 using CashierApp.Forms;
 using System.Runtime.CompilerServices;
+using CashierApp.ApiDataAccess;
 
 [assembly:InternalsVisibleTo("CashierAppTests")]
 
@@ -19,10 +20,9 @@ namespace CashierApp
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new MainForm(
-                new ItemsRepository(
-                    new CSVFileAccessor()
-                    )
-                ));
+                new ItemsApiRepository(
+                    new ApiDataReader()   
+                )));
         }
     }
 }
