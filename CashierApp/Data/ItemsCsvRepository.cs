@@ -1,4 +1,4 @@
-﻿using CashierApp.CsvDataAccessor;
+﻿using CashierApp.DataAccessor;
 using CashierApp.Model;
 
 namespace CashierApp.Data;
@@ -11,7 +11,7 @@ internal class ItemsCsvRepository : IRepository
         _accessor = accessor;
     }
 
-    public List<Item> GetItemList()
+    public async Task<List<Item>> GetItemList()
     {
         var fileContents = _accessor.Read("PriceList.csv");
 
@@ -28,7 +28,7 @@ internal class ItemsCsvRepository : IRepository
                 price));
         }
 
-        return itemList;
+        return await Task.FromResult(itemList);
     }
 
 }

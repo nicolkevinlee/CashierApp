@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualBasic.FileIO;
 
-namespace CashierApp.CsvDataAccessor;
+namespace CashierApp.DataAccessor;
 
 internal class CsvAccessor : IDataAccessor
 {

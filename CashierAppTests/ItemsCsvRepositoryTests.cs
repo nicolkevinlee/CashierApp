@@ -1,5 +1,5 @@
-﻿using CashierApp.CsvDataAccessor;
-using CashierApp.Data;
+﻿using CashierApp.Data;
+using CashierApp.DataAccessor;
 using CashierApp.Model;
 using Moq;
 using NUnit.Framework;

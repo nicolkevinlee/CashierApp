@@ -1,4 +1,4 @@
-﻿namespace CashierApp.ApiDataAccess;
+﻿namespace CashierApp.DataAccessor;
 
 public interface IApiDataReader
 {

@@ -1,4 +1,4 @@
-﻿using CashierApp.ApiDataAccess;
+﻿using CashierApp.DataAccessor;
 using CashierApp.DTO;
 using CashierApp.Model;
 using System;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CashierApp.Data
 {
-    internal class ItemsApiRepository : IApiRepository
+    internal class ItemsApiRepository : IRepository
     {
         private IApiDataReader _apiDataReader;
         private static readonly string BASE_URL = "https://localhost:7236/CashierAppApi/";
